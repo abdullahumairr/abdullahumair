@@ -16,49 +16,31 @@ import { useLang } from "@/lib/lang-context";
 import { useCarousel } from "@/lib/use-carousel";
 import type { Dict } from "@/lib/i18n";
 
-/* ------------------------------------------------------------------ */
-/* Types                                                               */
-/* ------------------------------------------------------------------ */
-
 type TabKey = "projects" | "awards" | "experience";
 
-// Satu bentuk data untuk semua tab (proyek, penghargaan, pengalaman)
 type CardItem = {
   num: string;
   eyebrow: string;
   title: string;
   desc: string;
   img: string;
-  url?: string; // kalau ada -> card bisa di-klik
-  tags?: string[]; // dipakai proyek
-  date?: string; // dipakai penghargaan & pengalaman
+  url?: string;
+  tags?: string[];
+  date?: string;
 };
 
-/* ------------------------------------------------------------------ */
-/* Gambar sementara (dummy)                                            */
-/* Ganti dengan file kamu sendiri, contoh:                             */
-/*   "/images/certificate/sertifikat-bnsp.png"                         */
-/*   "/images/experience/kodeintekno.png"                              */
-/* Urutannya harus sama dengan urutan di i18n.ts                       */
-/* (awardItems & experienceItems).                                     */
-/* ------------------------------------------------------------------ */
-
 const awardImages = [
-  "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=560&fit=crop",
-  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=560&fit=crop",
-  "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&h=560&fit=crop",
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&h=560&fit=crop",
+  "/images/award/bnsp_junior_web_developer.jpg",
+  "/images/award/dicoding_spec_driven.jpg",
+  "/images/award/Kompina_Informatika_gold.png",
+  "/images/award/Umair_TechSoft2026.jpg",
 ];
 
 const experienceImages = [
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&h=560&fit=crop",
-  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=560&fit=crop",
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=560&fit=crop",
+  "/images/experience/ldks_2025.jpeg",
+  "/images/experience/classsmeet_2025.jpeg",
+  "/images/experience/english_camp_20024.png",
 ];
-
-/* ------------------------------------------------------------------ */
-/* Card                                                                */
-/* ------------------------------------------------------------------ */
 
 function CardContent({
   item,
@@ -134,7 +116,6 @@ function CardContent({
 const cardBase =
   "group flex flex-col overflow-hidden rounded-xl border border-border-light bg-card-light transition-colors duration-300 hover:border-ink-light dark:border-border-dark dark:bg-card-dark dark:hover:border-ink-dark";
 
-/* Card untuk carousel mobile / tablet */
 function MobileCard({
   item,
   detailLabel,
@@ -159,9 +140,6 @@ function MobileCard({
   );
 }
 
-/* Card untuk grid desktop.
-   Setiap card punya animasi masuknya sendiri (bukan lewat variants parent),
-   jadi card yang baru muncul setelah klik "Lihat lebih banyak" tetap tampil. */
 function DesktopCard({
   item,
   index,
@@ -205,8 +183,6 @@ function DesktopCard({
   );
 }
 
-/* Carousel mobile / tablet. Dipisah jadi komponen sendiri dan diberi key={tab}
-   supaya carousel di-reset dan hanya menampilkan item dari tab yang aktif. */
 function MobileCarousel({
   items,
   detailLabel,
@@ -243,10 +219,6 @@ function MobileCarousel({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Animasi header                                                      */
-/* ------------------------------------------------------------------ */
-
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12 } },
@@ -259,10 +231,6 @@ const item = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
-
-/* ------------------------------------------------------------------ */
-/* Section                                                             */
-/* ------------------------------------------------------------------ */
 
 const pad = (n: number) => String(n + 1).padStart(2, "0");
 
@@ -297,7 +265,7 @@ export default function Projects() {
       desc: t.p3Desc,
       url: "https://monity-omega.vercel.app/",
       tags: ["Next.js", "TypeScript"],
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=560&fit=crop",
+      img: "/images/projects/monity/image.png",
     },
     {
       num: "04",
@@ -399,7 +367,6 @@ export default function Projects() {
         )}
       </motion.div>
 
-      {/* Tab switcher */}
       <div className="mb-8 flex justify-center sm:justify-start">
         <div
           role="tablist"
@@ -435,14 +402,12 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Mobile / tablet — carousel (< lg), hanya berisi item dari tab aktif */}
       <MobileCarousel
         key={`carousel-${tab}`}
         items={items}
         detailLabel={t.projectsDetail}
       />
 
-      {/* Desktop — grid (>= lg) */}
       <div key={`grid-${tab}`} className="hidden gap-6 lg:grid lg:grid-cols-3">
         {visibleItems.map((card, i) => (
           <DesktopCard

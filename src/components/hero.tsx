@@ -111,8 +111,8 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              href="/cv.pdf"
-              download
+              href="/images/hero/CV_abdullahumair.jpg"
+              download="Abdullah_Umair_CV.jpg"
               className="inline-flex items-center gap-2 rounded-lg border border-border-light px-5 py-3 font-heading text-sm font-semibold text-ink-light transition-colors duration-300 hover:bg-ink-light/5 dark:border-border-dark dark:text-ink-dark dark:hover:bg-ink-dark/5"
             >
               {t.ctaDownload}
@@ -212,7 +212,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Fallback badges untuk mobile & tablet — floating version di atas cuma tampil dari lg ke atas */}
       <div className="no-scrollbar mt-8 flex gap-3 overflow-x-auto lg:hidden">
         {[
           { icon: Code2, label: t.badge1 },
