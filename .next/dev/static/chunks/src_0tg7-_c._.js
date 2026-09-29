@@ -3086,6 +3086,11 @@ const techData = [
                 logo: simpleIcon("tailwindcss", "06B6D4")
             },
             {
+                name: "Bootstrap",
+                color: "#06B6D4",
+                logo: simpleIcon("bootstrap", "#7952B3")
+            },
+            {
                 name: "Next.js",
                 color: "#000000",
                 logo: simpleIcon("nextdotjs", "000000")
@@ -3094,6 +3099,11 @@ const techData = [
                 name: "TypeScript",
                 color: "#3178C6",
                 logo: simpleIcon("typescript", "3178C6")
+            },
+            {
+                name: "javascript",
+                color: "#3178C6",
+                logo: simpleIcon("javascript", "F7DF1E")
             },
             {
                 name: "Framer Motion",
@@ -3231,7 +3241,7 @@ function TechStack() {
                         children: t.techEyebrow
                     }, void 0, false, {
                         fileName: "[project]/src/components/tech-stack.tsx",
-                        lineNumber: 129,
+                        lineNumber: 139,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h2, {
@@ -3240,13 +3250,13 @@ function TechStack() {
                         children: t.techHeading
                     }, void 0, false, {
                         fileName: "[project]/src/components/tech-stack.tsx",
-                        lineNumber: 132,
+                        lineNumber: 142,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/tech-stack.tsx",
-                lineNumber: 122,
+                lineNumber: 132,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3270,7 +3280,7 @@ function TechStack() {
                                         children: categoryMeta[cat.categoryKey].name
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/tech-stack.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3278,13 +3288,13 @@ function TechStack() {
                                         children: categoryMeta[cat.categoryKey].desc
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/tech-stack.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 164,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/tech-stack.tsx",
-                                lineNumber: 150,
+                                lineNumber: 160,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3312,12 +3322,12 @@ function TechStack() {
                                                     className: "h-8 w-8 object-contain"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/tech-stack.tsx",
-                                                    lineNumber: 171,
+                                                    lineNumber: 181,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/tech-stack.tsx",
-                                                lineNumber: 167,
+                                                lineNumber: 177,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3325,35 +3335,35 @@ function TechStack() {
                                                 children: tech.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/tech-stack.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 187,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, tech.name, true, {
                                         fileName: "[project]/src/components/tech-stack.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 170,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/tech-stack.tsx",
-                                lineNumber: 158,
+                                lineNumber: 168,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, cat.categoryKey, true, {
                         fileName: "[project]/src/components/tech-stack.tsx",
-                        lineNumber: 142,
+                        lineNumber: 152,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/tech-stack.tsx",
-                lineNumber: 140,
+                lineNumber: 150,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/tech-stack.tsx",
-        lineNumber: 118,
+        lineNumber: 128,
         columnNumber: 5
     }, this);
 }

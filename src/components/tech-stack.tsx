@@ -21,6 +21,11 @@ const techData: { categoryKey: CategoryKey; items: Tech[] }[] = [
         logo: simpleIcon("tailwindcss", "06B6D4"),
       },
       {
+        name: "Bootstrap",
+        color: "#06B6D4",
+        logo: simpleIcon("bootstrap", "#7952B3"),
+      },
+      {
         name: "Next.js",
         color: "#000000",
         logo: simpleIcon("nextdotjs", "000000"),
@@ -29,6 +34,11 @@ const techData: { categoryKey: CategoryKey; items: Tech[] }[] = [
         name: "TypeScript",
         color: "#3178C6",
         logo: simpleIcon("typescript", "3178C6"),
+      },
+      {
+        name: "javascript",
+        color: "#3178C6",
+        logo: simpleIcon("javascript", "F7DF1E"),
       },
       {
         name: "Framer Motion",
