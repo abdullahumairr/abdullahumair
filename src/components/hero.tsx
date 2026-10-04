@@ -1,5 +1,6 @@
 "use client";
 
+import MusicPlayer, { type Track } from "./music-player";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -27,6 +28,27 @@ const item = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
+
+const tracks: Track[] = [
+  {
+    title: "Luther",
+    artist: "Kendrick Lamar ft. SZA",
+    audioSrc: "/audio/luther.mp3",
+    lrcSrc: "/audio/luther.lrc",
+  },
+  {
+    title: "I'd Rather Pretend",
+    artist: "Bryant Barnes ft. David",
+    audioSrc: "/audio/id-rather-pretend.mp3",
+    lrcSrc: "/audio/id-rather-pretend.lrc",
+  },
+  {
+    title: "Twenties",
+    artist: "Giveon",
+    audioSrc: "/audio/twenties.mp3",
+    lrcSrc: "/audio/twenties.lrc",
+  },
+];
 
 export default function Hero() {
   const { t } = useLang();
@@ -172,6 +194,7 @@ export default function Hero() {
                 sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 380px"
                 className="object-cover"
               />
+              <MusicPlayer tracks={tracks} />
             </div>
 
             <div className="absolute left-0 top-1/2 hidden w-max -translate-x-[38%] -translate-y-1/2 flex-col gap-3 lg:flex">

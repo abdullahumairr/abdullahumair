@@ -1,5 +1,6 @@
 "use client";
 
+import MusicPlayer, { type Track } from "./music-player";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -23,6 +24,27 @@ const item = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
+
+const tracks: Track[] = [
+  {
+    title: "Luther",
+    artist: "Kendrick Lamar ft. SZA",
+    audioSrc: "/audio/luther.mp3",
+    lrcSrc: "/audio/luther.lrc",
+  },
+  {
+    title: "I'd Rather Pretend",
+    artist: "Bryant Barnes ft. David",
+    audioSrc: "/audio/id-rather-pretend.mp3",
+    lrcSrc: "/audio/id-rather-pretend.lrc",
+  },
+  {
+    title: "Twenties",
+    artist: "Giveon",
+    audioSrc: "/audio/twenties.mp3",
+    lrcSrc: "/audio/twenties.lrc",
+  },
+];
 
 export default function AboutMe() {
   const { t } = useLang();
@@ -75,13 +97,14 @@ export default function AboutMe() {
           variants={item}
           className="flex h-full flex-col overflow-hidden rounded-xl border border-border-light bg-card-light dark:border-border-dark dark:bg-card-dark"
         >
-          <div className="relative aspect-[0]  lg:aspect-[3/4] w-full overflow-hidden">
+          <div className="relative  aspect-[3/4] w-full overflow-hidden">
             <Image
               src="/images/about/Background.png"
               alt="Abdullah Umair"
               fill
               className="object-cover grayscale-[0.08] transition-transform duration-700 hover:scale-105"
             />
+            <MusicPlayer tracks={tracks} />
           </div>
           <div className="p-4">
             <p className="eyebrow">{t.aboutProfileLabel}</p>
@@ -104,7 +127,6 @@ export default function AboutMe() {
           </div>
         </motion.div>
 
-        {/* Column 2 — Who Am I + Engineering Approach, stretched to match column 1's height */}
         <div className="flex h-full flex-col gap-4">
           <motion.div
             variants={item}
@@ -134,7 +156,6 @@ export default function AboutMe() {
           </motion.div>
         </div>
 
-        {/* Column 3 — Personal Information, stretched + button anchored to bottom */}
         <motion.div
           variants={item}
           className="flex h-full flex-col rounded-xl border border-border-light bg-card-light p-5 dark:border-border-dark dark:bg-card-dark"
