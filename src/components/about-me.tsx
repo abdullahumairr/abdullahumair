@@ -33,6 +33,12 @@ const tracks: Track[] = [
     lrcSrc: "/audio/luther.lrc",
   },
   {
+    title: "Can't Give Up",
+    artist: "Connor Price & Prinz & GRAHAM",
+    audioSrc: "/audio/cant-give-up.mp3",
+    lrcSrc: "/audio/cant-give-up.lrc",
+  },
+  {
     title: "I'd Rather Pretend",
     artist: "Bryant Barnes ft. David",
     audioSrc: "/audio/id-rather-pretend.mp3",
@@ -43,6 +49,18 @@ const tracks: Track[] = [
     artist: "Giveon",
     audioSrc: "/audio/twenties.mp3",
     lrcSrc: "/audio/twenties.lrc",
+  },
+  {
+    title: "Love Songs",
+    artist: "Kash Paige",
+    audioSrc: "/audio/love-songs.mp3",
+    lrcSrc: "/audio/love-songs.lrc",
+  },
+  {
+    title: "Young Dumb And Broke",
+    artist: "Khalid",
+    audioSrc: "/audio/young_dumb_and_broke.mp3",
+    lrcSrc: "/audio/young_dumb_and_broke.lrc",
   },
   {
     title: "MIstletoe",
