@@ -44,6 +44,12 @@ const tracks: Track[] = [
     audioSrc: "/audio/twenties.mp3",
     lrcSrc: "/audio/twenties.lrc",
   },
+  {
+    title: "MIstletoe",
+    artist: "Justin Bieber",
+    audioSrc: "/audio/mistletoe.mp3",
+    lrcSrc: "/audio/mistletoe.lrc",
+  },
 ];
 
 export default function AboutMe() {
