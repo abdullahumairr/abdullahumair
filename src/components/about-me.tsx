@@ -68,6 +68,12 @@ const tracks: Track[] = [
     audioSrc: "/audio/mistletoe.mp3",
     lrcSrc: "/audio/mistletoe.lrc",
   },
+  {
+    title: "Cikini Ke Gondangdia",
+    artist: "Thailand edit",
+    audioSrc: "/audio/cikini-ke-gondangdia.mp3",
+    lrcSrc: "/audio/cikini-ke-gondangdia.lrc",
+  },
 ];
 
 export default function AboutMe() {

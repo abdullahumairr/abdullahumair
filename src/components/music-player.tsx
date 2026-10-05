@@ -37,6 +37,7 @@ export default function MusicPlayer({ tracks }: { tracks: Track[] }) {
   const lineRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const barRef = useRef<HTMLDivElement>(null);
   const scrubbingRef = useRef(false);
+  const autoPlayRef = useRef(false); // true kalau ganti lagu karena lagu sebelumnya habis
 
   const track = tracks[trackIndex];
   const hasLyrics = lyrics.length > 0;
@@ -50,7 +51,10 @@ export default function MusicPlayer({ tracks }: { tracks: Track[] }) {
     setOffset(0);
     setCurrent(0);
     setDuration(0);
-    if (isPlaying) audio.play().catch(() => setIsPlaying(false));
+    if (isPlaying || autoPlayRef.current) {
+      autoPlayRef.current = false;
+      audio.play().catch(() => setIsPlaying(false));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackIndex]);
 
@@ -183,6 +187,20 @@ export default function MusicPlayer({ tracks }: { tracks: Track[] }) {
     if (audio.paused) audio.play().catch(() => {});
   };
 
+  // Lagu habis -> otomatis putar lagu berikutnya (balik ke awal setelah lagu terakhir)
+  const handleEnded = () => {
+    if (tracks.length <= 1) {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+      return;
+    }
+    autoPlayRef.current = true;
+    next();
+  };
+
   const next = () => setTrackIndex((i) => (i + 1) % tracks.length);
   const prev = () =>
     setTrackIndex((i) => (i - 1 + tracks.length) % tracks.length);
@@ -194,7 +212,7 @@ export default function MusicPlayer({ tracks }: { tracks: Track[] }) {
     <>
       <audio
         ref={audioRef}
-        onEnded={next}
+        onEnded={handleEnded}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
