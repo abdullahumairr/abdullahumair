@@ -14,11 +14,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah Umair | Fullstack Web Developer & Next.js Specialist",
+  title: "Abdullah Umair | Fullstack Web Developer ",
   description:
     "Portofolio profesional Abdullah Umair, seorang Fullstack Web Developer berbasis di Semarang. Spesialis Next.js, TypeScript, Backend Terdistribusi, dan DevOps.",
   keywords: [
     "Abdullah Umair",
+    "Web Full Stack Developer",
+    "contoh Web Full Stack Developer",
+    "full stack developer",
     "Umair",
     "abdlumrr",
     "Fullstack Developer Semarang",
@@ -39,7 +42,7 @@ export const metadata: Metadata = {
     canonical: "https://abdullahumair.my.id",
   },
   openGraph: {
-    title: "Abdullah Umair | Fullstack Web Developer & Next.js Specialist",
+    title: "Abdullah Umair | Fullstack Web Developer",
     description:
       "Eksplorasi project web, arsitektur backend, dan tech-stack dari Abdullah Umair.",
     url: "https://abdullahumair.my.id",
